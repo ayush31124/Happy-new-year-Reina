@@ -1,0 +1,238 @@
+ /* General Reset */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Circle Menu Styling */
+.circle-menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  background-color: gold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.menu-content {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.menu-content.active {
+  display: block;
+}
+
+.menu-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-content ul li {
+  margin: 10px 0;
+}
+
+.menu-content ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.menu-content ul li a:hover {
+  color: gold;
+}
+
+/* Home Section */
+.home-section {
+  text-align: center;
+  margin-top: 100px;
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Happy New Year Styling */
+.new-year {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  color: gold;
+  animation: fadeIn 2s ease-in-out forwards, bounce 2s infinite ease-in-out;
+  opacity: 0;
+}
+
+/* Reina Styling */
+.reina {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  color: lightcoral;
+  margin-top: 10px;
+  animation: fadeIn 4s ease-in-out forwards;
+  opacity: 0;
+}
+
+/* Special Wishes Section */
+.special-wishes {
+  margin-top: 40px;
+  padding: 15px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  animation: fadeIn 6s ease-in-out forwards;
+}
+
+.special-wishes h2 {
+  color: gold;
+  font-size: 2rem;
+}
+
+.special-wishes ul {
+  list-style-type: disc;
+  margin: 15px;
+  padding-left: 20px;
+}
+
+.special-wishes li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Fireworks */
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.firework {
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  animation: skyShot 2s ease-out, explode 2s ease-out;
+}
+
+@keyframes skyShot {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(50vh) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes explode {
+  0%, 90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 30px 10px gold, 0 0 50px 20px red;
+    transform: scale(2.5);
+  }
+}
+
+@keyframes particleSpread {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(var(--dx) * 100px), calc(var(--dy) * 100px)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color);
+  border-radius: 50%;
+  animation: particleSpread 1.5s ease-out forwards;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+canvas {
+  background: #000;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+  /* Snow color */
+  #embedim--snow .embedim-snow{
+    background-color: white;
+  }
+  
